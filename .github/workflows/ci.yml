@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Update apt
+        run: apt update
+
       - name: Install qemu
         run: >
           sudo apt-get install -yq --no-install-recommends
