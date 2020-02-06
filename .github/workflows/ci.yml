@@ -14,7 +14,7 @@ jobs:
 
       - name: Install qemu
         run: >
-          sudo apt-get install -yq
+          sudo apt-get install -yq --no-install-recommends
           qemu-system-i386
           qemu-utils
 
