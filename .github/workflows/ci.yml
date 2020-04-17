@@ -33,11 +33,11 @@ jobs:
           qemu-system-i386
           qemu-utils
 
-      - name: Install test requirements
-        run: pip install -U -r requirements.tests.txt
+      - name: Install pipenv
+        run: pip install pipenv
 
       - name: Install package
-        run: pip install -e .
+        run: pipenv install
 
       - name: Lint
         run: pylint librouteros
