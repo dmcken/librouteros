@@ -39,18 +39,15 @@ jobs:
       - name: Install package
         run: pipenv install
 
-      - name: Pipenv shell
-        run: pipenv shell
-
       - name: Lint
-        run: pylint librouteros
+        run: pienv run pylint librouteros
 
       - name: Type check
-        run: mypy librouteros
+        run: pienv run mypy librouteros
 
       - name: Format
         run: >
-          yapf -dr
+          pienv run yapf -dr
           librouteros
           tests
 
@@ -60,10 +57,10 @@ jobs:
           wget --quiet netng.pl/routeros_test_images/routeros_6.44.5.qcow2 -O images/routeros_6.44.5.qcow2
 
       - name: Unit tests
-        run: pytest tests/unit
+        run: pienv run pytest tests/unit
 
       - name: Integration tests
-        run: pytest -n auto tests/integration
+        run: pienv run pytest -n auto tests/integration
 
       - name: Package
         run: python setup.py sdist
