@@ -37,7 +37,7 @@ jobs:
         run: pip install pipenv
 
       - name: Install package
-        run: pipenv install
+        run: pipenv --py `which python3` install
 
       - name: Lint
         run: pipenv run pylint librouteros
