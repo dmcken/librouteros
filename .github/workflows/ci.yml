@@ -39,6 +39,9 @@ jobs:
       - name: Install package
         run: pipenv install
 
+      - name: Pipenv shell
+        run: pipenv shell
+
       - name: Lint
         run: pylint librouteros
 
